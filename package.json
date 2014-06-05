@@ -1,0 +1,46 @@
+{
+  "name": "hubot-steamdailydeal",
+  "description": "returns steam daily deal info from store.steampowered.com",
+  "version": "0.0.1",
+
+  "author": {
+      "name": "Nick Fletcher",
+      "email": "nick@ohwait.net",
+      "twitter": "nickfletchr"
+  },
+
+  "license": "MIT",
+
+  "keywords": ["hubot","hubot-scripts","steam","scrapes"],
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nickfletcher/hubot-steamdailydeal.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/nickfletchr/hubot-steamdailydeal/issues"
+  },
+
+  "dependencies": {
+    "coffee-script": "~1.7.1",
+    "cheerio": "~0.16.0"
+  },
+
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "sinon-chai": "*",
+    "sinon": "*",
+    "grunt-mocha-test": "~0.11.0",
+    "grunt-release": "~0.7.0",
+    "matchdep": "~0.3.0",
+    "grunt-contrib-watch": "~0.6.1"
+  },
+
+  "main": "index.coffee",
+
+  "scripts": {
+    "test": "grunt test"
+  }
+}
