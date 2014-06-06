@@ -13,4 +13,4 @@ describe 'steamdailydeal', ->
     require('../src/steamdailydeal')(@robot)
 
   it 'registers a hear listener', ->
-    expect(@robot.hear).to.have.been.calledWith(/(steamdeal\?)$/i)
+    expect(@robot.hear).to.have.been.calledWith(/^(steamdeal\?)$/i)
