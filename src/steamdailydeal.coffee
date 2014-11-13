@@ -23,13 +23,14 @@ module.exports = (robot) ->
           msg.send "Unable to get the Steam daily deal."
         if !err && res.statusCode == 200
           $ = cheerio.load(body)
-          gameUrl = $('.dailydeal a').attr('href')
-          regPrice = $('.dailydeal_content .discount_original_price').text()
-          salePrice = $('.dailydeal_content .discount_final_price').text()
-          percentOff = $('.dailydeal_content .discount_pct').text()
+          gameUrl = $('.dailydeal_ctn a').attr('href')
+          regPrice = $('.dailydeal_ctn .discount_original_price').text()
+          salePrice = $('.dailydeal_ctn .discount_final_price').text()
+          percentOff = $('.dailydeal_ctn .discount_pct').text()
           robot.http(gameUrl)
             .get() (err, res, body) ->
               $ = cheerio.load(body)
+              regex = /.*on\s+(.*)\s+on.*/
               gameName = $('.apphub_AppName').text()
               deal = gameName + ' is ' + salePrice + ' (' + percentOff + ') today. Regular price: ' + regPrice + '.' + ' (' + gameUrl + ')'
               msg.send deal
