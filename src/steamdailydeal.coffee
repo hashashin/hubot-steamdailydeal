@@ -30,7 +30,6 @@ module.exports = (robot) ->
           robot.http(gameUrl)
             .get() (err, res, body) ->
               $ = cheerio.load(body)
-              regex = /.*on\s+(.*)\s+on.*/
               gameName = $('.apphub_AppName').text()
               deal = gameName + ' is ' + salePrice + ' (' + percentOff + ') today. Regular price: ' + regPrice + '.' + ' (' + gameUrl + ')'
               msg.send deal
