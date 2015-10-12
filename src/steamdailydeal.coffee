@@ -16,7 +16,7 @@
 cheerio = require 'cheerio'
 
 module.exports = (robot) ->
-  robot.hear /^(steamdeal\?)$/i, (msg) ->
+  robot.respond /steamdeal/i, (msg) ->
     robot.http('http://store.steampowered.com')
       .get() (err, res, body) ->
         if err
