@@ -24,9 +24,9 @@ module.exports = (robot) ->
         if !err && res.statusCode == 200
           $ = cheerio.load(body)
           gameUrl = $('.dailydeal_ctn a').attr('href')
-          regPrice = $('.dailydeal_ctn .discount_original_price').text()
-          salePrice = $('.dailydeal_ctn .discount_final_price').text()
-          percentOff = $('.dailydeal_ctn .discount_pct').text()
+          regPrice = $('.discount_block.daily_deal_discount.discount_block_large .discount_prices .discount_original_price').text()
+          salePrice = $('.discount_block.daily_deal_discount.discount_block_large .discount_prices .discount_final_price').text()
+          percentOff = $('.discount_block.daily_deal_discount.discount_block_large .discount_pct').text()
           robot.http(gameUrl)
             .get() (err, res, body) ->
               $ = cheerio.load(body)
